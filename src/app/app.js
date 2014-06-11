@@ -1,13 +1,14 @@
 angular.module( 'ngBoilerplate', [
   'templates-app',
   'templates-common',
-  'ngBoilerplate.home',
-  'ngBoilerplate.about',
-  'ui.router'
+  'ui.router',
+  'ngSandbox',
+  'lndTreeView',
+  'cicstart-vfs'
 ])
 
 .config( function myAppConfig ( $stateProvider, $urlRouterProvider ) {
-  $urlRouterProvider.otherwise( '/home' );
+  $urlRouterProvider.otherwise( '/sandbox' );
 })
 
 .run( function run () {
@@ -19,6 +20,9 @@ angular.module( 'ngBoilerplate', [
       $scope.pageTitle = toState.data.pageTitle + ' | ngBoilerplate' ;
     }
   });
+
+  var date = new Date();
+  $scope.year = date.getFullYear();
 })
 
 ;

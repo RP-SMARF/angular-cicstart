@@ -1,0 +1,32 @@
+<script type="text/ng-template" id="tree_item_renderer.html">
+	<accordion>
+		<div ng-repeat="entry in entry.nodes" ng-switch on="entry.dir == true ? 'true' : 'false'">
+			<div ng-switch-when="true">
+				<accordion-group  heading="{{entry.path.relationship}}">
+					<button ng-click="getDirContents(entry.path.href,entry)">Expand</button>
+					<div ng-include="'tree_item_renderer.html'">
+					</div>
+				</accordion-group>
+			</div>
+			<div ng-switch-when="false">
+				<alert type="success">{{entry.path.relationship}}</alert>
+			</div>
+		</div>
+	</accordion>
+</script>
+
+<accordion >
+	<div ng-repeat="entry in entries" ng-switch on="entry.dir == true ? 'true' : 'false'">
+		<div ng-switch-when="true">
+			<accordion-group  heading="{{entry.path.relationship}}">
+				<button ng-click="getRootContents(entry.path.href,$index)">Expand</button>
+				<div ng-include="'tree_item_renderer.html'">
+				</div>
+			</accordion-group>
+		</div>
+		<div ng-switch-when="false">
+			<alert type="success">{{entry.path.relationship}}</alert>
+		</div>
+	
+	</div>
+</accordion>
