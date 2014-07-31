@@ -4,7 +4,8 @@ angular.module( 'ngBoilerplate', [
   'ui.router',
   'ngSandbox',
   'lndTreeView',
-  'cicstart-vfs'
+  'cicstart-vfs',
+  'blog'
 ])
 
 .config( function myAppConfig ( $stateProvider, $urlRouterProvider ) {
@@ -23,6 +24,7 @@ angular.module( 'ngBoilerplate', [
 
   var date = new Date();
   $scope.year = date.getFullYear();
+  $scope.viewName = {name:'main'};
 })
 
 ;

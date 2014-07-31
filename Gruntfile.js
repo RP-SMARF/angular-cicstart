@@ -87,10 +87,13 @@ module.exports = function ( grunt ) {
     /**
      * The directories to delete when `grunt clean` is executed.
      */
-    clean: [ 
+    clean: {
+      files: [ 
       '<%= build_dir %>', 
       '<%= compile_dir %>'
-    ],
+      ],
+      options:{force:true}
+  },
 
     /**
      * The `copy` task just copies files from A to B. We use it here to copy
@@ -556,6 +559,15 @@ module.exports = function ( grunt ) {
     'concat:build_css', 'copy:build_app_assets', 'copy:build_vendor_assets',
     'copy:build_appjs', 'copy:build_vendorjs', 'index:build', 'karmaconfig',
     'karma:continuous' 
+  ]);
+
+  /**
+   * The `deploy` task gets your app ready to run in development mode without testing.
+   */
+  grunt.registerTask( 'deploy', [
+    'clean', 'html2js', 'jshint', 'coffeelint', 'coffee', 'less:build',
+    'concat:build_css', 'copy:build_app_assets', 'copy:build_vendor_assets',
+    'copy:build_appjs', 'copy:build_vendorjs', 'index:build'  
   ]);
 
   /**

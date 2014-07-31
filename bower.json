@@ -9,6 +9,7 @@
     "angular-ui-router": "~0.2",
     "angular-resource": "~1.2.16",
     "angular-cookie": "~4.0.0",
-    "angular-bootstrap-nav-tree": "*"
+    "angular-bootstrap-nav-tree": "*",
+    "restangular": "~1.4.0"
   }
 }

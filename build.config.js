@@ -7,7 +7,8 @@ module.exports = {
    * development and the `compile_dir` folder is where our app resides once it's
    * completely built.
    */
-  build_dir: 'build',
+  //build_dir: 'build',
+  build_dir: '/home/lando/workspace/CANARIE/python/blogsite/blog/angular',
   compile_dir: 'bin',
 
   /**
@@ -68,7 +69,10 @@ module.exports = {
       'vendor/angular-ui-router/release/angular-ui-router.js',
       'vendor/angular-ui-utils/modules/route/route.js',
       'vendor/angular-resource/angular-resource.js',
-      'vendor/angular-cookie/angular-cookie.js'
+      'vendor/angular-cookie/angular-cookie.js',
+      'vendor/lodash/dist/lodash.js',
+      'vendor/restangular/src/restangular.js',
+
     ],
     css: [
     ],

@@ -1,0 +1,12 @@
+<div>
+	<h1>Login to see your blog posts!</h1>
+	<div id="loginDiv" class"container-fluid">
+		<form ng-submit="submit($event)" action="authentication/auth/" method="POST">
+			<label for="username">Username:</label>
+			<input id="username" type="text" name="username" class="form-control"></input>
+			<label for="password">Password:</label>
+			<input id="password" type="password" name="password" class="form-control"></input>
+			<input class="form-control" type="submit" value="Login"></input>
+		</form>
+	</div>
+</div>

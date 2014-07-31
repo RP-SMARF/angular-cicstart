@@ -3,7 +3,7 @@ angular.module('cicstart-vfs.service', ['ngResource'])
 .factory('CICSTART', ['$resource', function($resource){
 	
 	var resourceService = {};
-	var session = '';
+	//var session = '';
 	resourceService = $resource(' http://localhost:8080/cicstart/api/:module/:type/:userId/:command',{},{
 		ls: {method:'GET', params:{module: 'vfs', type: 'filesystem', userId:'2', command:'ls',path:'/'},headers:{'CICSTART.session': function(){return resourceService.getSessionVal();}},isArray:false
 		},
@@ -14,10 +14,11 @@ angular.module('cicstart-vfs.service', ['ngResource'])
 
 	resourceService.setSession = function(_session_)
 	{
-		session = _session_;
+		
+		this.session = _session_;
 	};
 	resourceService.getSessionVal = function () {
-		return session;
+		return this.session;
 	};
 	return resourceService;//{'resourceService':resourceService, 'sessionVal':session};
 }]);
